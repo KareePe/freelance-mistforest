@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // Add 'loaded' class to body when content is loaded
+  document.body.classList.add("loaded");
+});
+
 window.addEventListener("scroll", function () {
   const header = document.querySelector(".logo-restaurants");
   // console.log(window.pageYOffset);
