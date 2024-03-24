@@ -483,6 +483,7 @@ body.loaded .preloader {
     margin-top: 25px;
     margin-left: 63px;
     font-weight: lighter;
+    letter-spacing: 3px;
 }
 
 .address-topic img {
@@ -582,4 +583,16 @@ body.loaded .preloader {
 
 .dot.active {
     background-color: #555;
+}
+
+.visibility {
+    visibility: visible !important;
+}
+
+.height-100vh {
+    height: auto;
+}
+
+.opacity {
+    opacity: 1 !important;
 }

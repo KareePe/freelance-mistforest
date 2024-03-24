@@ -3,18 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.body.classList.add("loaded");
 });
 
-window.addEventListener("scroll", function () {
-  const header = document.querySelector(".logo-restaurants");
-  // console.log(window.pageYOffset);
-  // if (window.pageYOffset >= 2200) {
-  //   // When scrolled to the top, apply fixed position and width 100%
-  //   header.style.position = 'fixed';
-  // } else {
-  //   // Reset styles when scrolled away from the top
-  //   header.style.position = 'relative';
-  // }
-});
-
 $(window)
   .scroll(() => {
     const windscroll = $(document).scrollTop();
@@ -22,12 +10,18 @@ $(window)
     if (windscroll >= 100) {
       $("section").each(function (i) {
         if ($(this).position().top <= windscroll - -50) {
-          $("nav li a.active-a").removeClass("active-a");
-          $("nav li a").eq(i).addClass("active-a");
+          $("nav").each(function () {
+            $(this).find("li a.active-a").removeClass("active-a");
+            $(this).find("li a").eq(i).addClass("active-a");
+          });
+          // $("nav li a.active-a").removeClass("active-a");
+          // $("nav li a").eq(i).addClass("active-a");
         }
       });
     } else {
-      $("nav li a.active-a").removeClass("active-a");
+      $("nav").each(function () {
+        $(this).find("li a.active-a").removeClass("active-a");
+      });
       // $("nav li a:first").addClass("active-a");
     }
   })
@@ -54,6 +48,41 @@ $(document).ready(function () {
           window.location.hash = target;
         }
       );
+  });
+
+  $("#nav-icon4").click(function () {
+    $(this).toggleClass("open");
+
+    if ($(this)[0].classList.value === "open") {
+      $(".menu").addClass("visibility");
+      setTimeout(function () {
+        $(".menu").addClass("height-100vh");
+      }, 100);
+      setTimeout(function () {
+        $(".menu ul").addClass("opacity");
+      }, 350);
+    } else {
+      $(".menu ul").removeClass("opacity");
+
+      setTimeout(function () {
+        $(".menu").removeClass("height-100vh");
+      }, 300);
+      setTimeout(function () {
+        $(".menu").removeClass("visibility");
+      }, 500);
+    }
+  });
+
+  $(".nav-link").click(function () {
+    $(".menu ul").removeClass("opacity");
+
+    setTimeout(function () {
+      $(".menu").removeClass("height-100vh");
+    }, 300);
+    setTimeout(function () {
+      $(".menu").removeClass("visibility");
+      $("#nav-icon4").removeClass("open");
+    }, 500);
   });
 });
 
