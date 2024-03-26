@@ -410,6 +410,9 @@ body.loaded .preloader {
     justify-content: center;
     align-items: center;
 }
+.social-list li a img{
+    width: unset !important;
+}
 
 .leaf-r-2 {
     position: absolute;
@@ -603,4 +606,12 @@ body.loaded .preloader {
 
 .order-2-1{
     order: 2;
+}
+
+.hidden-ds{
+    display: none;
+}
+
+.hidden-mb{
+    display: block;
 }

@@ -195,6 +195,14 @@
     .order-2-1 {
         order: 1;
     }
+
+    .hidden-ds{
+        display: block;
+    }
+    
+    .hidden-mb{
+        display: none;
+    }
 }
 
 @media (max-width: 767px) {
